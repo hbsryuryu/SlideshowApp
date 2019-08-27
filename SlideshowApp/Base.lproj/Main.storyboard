@@ -68,6 +68,15 @@
                                 <rect key="frame" x="240" y="375" width="108" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8S-CT-wOo">
+                                <rect key="frame" x="45" y="80" width="284" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="main画面外へ"/>
+                                <connections>
+                                    <action selector="auto_cancle:" destination="BYZ-38-t0r" eventType="touchDown" id="XNT-mR-6O9"/>
+                                    <segue destination="I0N-yX-T5u" kind="show" id="jJm-JY-6Xh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -75,6 +84,7 @@
                     <connections>
                         <outlet property="button_auto_stop" destination="aZa-hp-q4n" id="Qq9-Nt-eCf"/>
                         <outlet property="button_back" destination="3ft-Yp-XZl" id="veo-iQ-ZZi"/>
+                        <outlet property="button_goto_big_main" destination="s8S-CT-wOo" id="X4O-1r-gZV"/>
                         <outlet property="button_next" destination="iZr-jk-NSX" id="bmw-9d-vt5"/>
                         <outlet property="image_back" destination="Czh-9W-N4w" id="wgS-KA-zNB"/>
                         <outlet property="image_main" destination="g9Y-6Z-2zx" id="eDX-w4-GEY"/>
@@ -85,6 +95,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="116.49175412293854"/>
+        </scene>
+        <!--Big image View Controller-->
+        <scene sceneID="0e6-xk-5Bx">
+            <objects>
+                <viewController id="I0N-yX-T5u" customClass="big_image_ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jlz-nC-3FT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxq-UB-qc2">
+                                <rect key="frame" x="114" y="592" width="147" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ofZ-ge-V7G" kind="unwind" unwindAction="unwind:" id="Tf0-Vj-van"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="dVz-6G-a35">
+                                <rect key="frame" x="16" y="48" width="343" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jOL-QE-GBf"/>
+                    </view>
+                    <connections>
+                        <outlet property="image_big" destination="dVz-6G-a35" id="SlJ-3e-fF0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4M-Rt-lEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ofZ-ge-V7G" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="115.59220389805098"/>
         </scene>
     </scenes>
     <resources>

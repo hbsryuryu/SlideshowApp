@@ -10,13 +10,15 @@ import UIKit
 
 class big_image_ViewController: UIViewController {
 
+    var image_big_name = "error"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        image_big.image = UIImage(named: "\(image_big_name)")
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var image_big: UIImageView!
     /*
     // MARK: - Navigation
 

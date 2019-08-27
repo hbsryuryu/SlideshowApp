@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var timer: Timer!
     var timer_sec: Int = 0
-    let moji_set = ["再生/停止","停止","次へ","戻る"]
+    let moji_set = ["再生/停止","停止","次へ","戻る",""]
     var image_set = ["empty"]
     var image_set_count = 16
     var image_max_count = 0
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button_auto_stop: UIButton!
     @IBOutlet weak var button_next: UIButton!
     @IBOutlet weak var button_back: UIButton!
+    @IBOutlet weak var button_goto_big_main: UIButton!
     @IBOutlet weak var image_main: UIImageView!
     @IBOutlet weak var image_next: UIImageView!
     @IBOutlet weak var image_back: UIImageView!
@@ -41,20 +42,30 @@ class ViewController: UIViewController {
         button_auto_stop.setTitle("\(moji_set[0])", for: UIControl.State())
         button_next.setTitle("\(moji_set[2])", for: UIControl.State())
         button_back.setTitle("\(moji_set[3])", for: UIControl.State())
+        button_goto_big_main.setTitle("\(moji_set[4])", for: UIControl.State())
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let big_image_side_ViewController:big_image_ViewController = segue.destination as! big_image_ViewController
+        big_image_side_ViewController.image_big_name = image_set[image_main_number]
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
 
-
+    @IBAction func auto_cancle(_ sender: Any) {
+        if (self.timer != nil){
+             auto_cancle()
+        }
+    }
+    
     @IBAction func auto_stop(_ sender: Any) {
         if (self.timer == nil){
             button_swich(flug :"off")
             button_auto_stop.setTitle("\(moji_set[1])", for: UIControl.State())
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(auto_side(_:)), userInfo: nil, repeats: true)
         }else{
-            button_swich(flug :"on")
-            button_auto_stop.setTitle("\(moji_set[0])", for: UIControl.State())
-            self.timer.invalidate()
-            self.timer_sec = 0
-            self.timer = nil
+            auto_cancle()
         }
     }
     @IBAction func button_next(_ sender: Any) {
@@ -117,6 +128,14 @@ class ViewController: UIViewController {
             button_back.isHidden = true
         }
         
+    }
+    
+    func auto_cancle(){
+        button_swich(flug :"on")
+        button_auto_stop.setTitle("\(moji_set[0])", for: UIControl.State())
+        self.timer.invalidate()
+        self.timer_sec = 0
+        self.timer = nil
     }
     
 }
