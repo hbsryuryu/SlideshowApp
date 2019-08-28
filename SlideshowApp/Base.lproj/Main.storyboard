@@ -70,11 +70,29 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8S-CT-wOo">
                                 <rect key="frame" x="45" y="80" width="284" height="257"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="main画面外へ"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="goto_big_main"/>
                                 <connections>
-                                    <action selector="auto_cancle:" destination="BYZ-38-t0r" eventType="touchDown" id="XNT-mR-6O9"/>
+                                    <action selector="button_goto_big_main:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8u2-hV-M7P"/>
                                     <segue destination="I0N-yX-T5u" kind="show" id="jJm-JY-6Xh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHV-7v-4fP">
+                                <rect key="frame" x="27" y="375" width="108" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="goto_big_back"/>
+                                <connections>
+                                    <action selector="button_goto_big_back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIx-sV-gMB"/>
+                                    <segue destination="I0N-yX-T5u" kind="show" id="NCH-hE-WKH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtM-Fy-7Em">
+                                <rect key="frame" x="240" y="375" width="108" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="goto_big_next"/>
+                                <connections>
+                                    <action selector="button_goto_big_next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mIR-si-D52"/>
+                                    <segue destination="I0N-yX-T5u" kind="show" id="13n-V4-GHy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,7 +102,9 @@
                     <connections>
                         <outlet property="button_auto_stop" destination="aZa-hp-q4n" id="Qq9-Nt-eCf"/>
                         <outlet property="button_back" destination="3ft-Yp-XZl" id="veo-iQ-ZZi"/>
+                        <outlet property="button_goto_big_back" destination="eHV-7v-4fP" id="J78-ex-tEn"/>
                         <outlet property="button_goto_big_main" destination="s8S-CT-wOo" id="X4O-1r-gZV"/>
+                        <outlet property="button_goto_big_next" destination="YtM-Fy-7Em" id="Kel-98-1gm"/>
                         <outlet property="button_next" destination="iZr-jk-NSX" id="bmw-9d-vt5"/>
                         <outlet property="image_back" destination="Czh-9W-N4w" id="wgS-KA-zNB"/>
                         <outlet property="image_main" destination="g9Y-6Z-2zx" id="eDX-w4-GEY"/>
@@ -120,11 +140,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaS-YL-4Zr">
+                                <rect key="frame" x="16" y="48" width="343" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="return"/>
+                                <connections>
+                                    <segue destination="ofZ-ge-V7G" kind="unwind" unwindAction="button_return:" id="Tss-rc-XDY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jOL-QE-GBf"/>
                     </view>
                     <connections>
+                        <outlet property="button_return" destination="EaS-YL-4Zr" id="0eh-jQ-WoV"/>
                         <outlet property="image_big" destination="dVz-6G-a35" id="SlJ-3e-fF0"/>
                     </connections>
                 </viewController>
@@ -137,4 +166,7 @@
     <resources>
         <image name="image_1" width="500" height="375"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NCH-hE-WKH"/>
+    </inferredMetricsTieBreakers>
 </document>

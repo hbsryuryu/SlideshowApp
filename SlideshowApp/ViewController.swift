@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var image_main_number = 0
     var image_next_number = 0
     var image_back_number = 0
+    var image_send_name = "error"
     
     
     @IBOutlet weak var print: UILabel!
@@ -26,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var button_next: UIButton!
     @IBOutlet weak var button_back: UIButton!
     @IBOutlet weak var button_goto_big_main: UIButton!
+    @IBOutlet weak var button_goto_big_next: UIButton!
+    @IBOutlet weak var button_goto_big_back: UIButton!
     @IBOutlet weak var image_main: UIImageView!
     @IBOutlet weak var image_next: UIImageView!
     @IBOutlet weak var image_back: UIImageView!
@@ -37,25 +40,40 @@ class ViewController: UIViewController {
         image_next_number = image_main_number + 1
         image_array_setup()
         image_apply_func()
-        print.text = ""
+        print.text = "\(moji_set[4])"
         //print.text = "\(image_set)"
-        button_auto_stop.setTitle("\(moji_set[0])", for: UIControl.State())
-        button_next.setTitle("\(moji_set[2])", for: UIControl.State())
-        button_back.setTitle("\(moji_set[3])", for: UIControl.State())
-        button_goto_big_main.setTitle("\(moji_set[4])", for: UIControl.State())
+        button_moji_setup()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let big_image_side_ViewController:big_image_ViewController = segue.destination as! big_image_ViewController
-        big_image_side_ViewController.image_big_name = image_set[image_main_number]
+        big_image_side_ViewController.image_big_name = image_send_name
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
+    
+    @IBAction func button_return(_ segue: UIStoryboardSegue) {
+    }
 
-    @IBAction func auto_cancle(_ sender: Any) {
+    @IBAction func button_goto_big_main(_ sender: Any) {
+        image_send_name = image_set[image_main_number]
         if (self.timer != nil){
              auto_cancle()
+        }
+    }
+    
+    @IBAction func button_goto_big_next(_ sender: Any) {
+        image_send_name = image_set[image_next_number]
+        if (self.timer != nil){
+            auto_cancle()
+        }
+    }
+    
+    @IBAction func button_goto_big_back(_ sender: Any) {
+        image_send_name = image_set[image_back_number]
+        if (self.timer != nil){
+            auto_cancle()
         }
     }
     
@@ -74,13 +92,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func butto_back(_ sender: Any) {
-        image_next_number = image_main_number
-        image_main_number = image_back_number
-        if (image_back_number <= 0){
-            image_back_number = image_max_count
-        }else{
-            image_back_number -= 1
-        }
+        image_back_func()
         image_apply_func()
     }
     
@@ -115,6 +127,16 @@ class ViewController: UIViewController {
         }
     }
     
+    func image_back_func(){
+        image_next_number = image_main_number
+        image_main_number = image_back_number
+        if (image_back_number <= 0){
+            image_back_number = image_max_count
+        }else{
+            image_back_number -= 1
+        }
+    }
+    
     func button_swich(flug:String){
         if(flug == "on"){
             button_next.isEnabled = true
@@ -136,6 +158,15 @@ class ViewController: UIViewController {
         self.timer.invalidate()
         self.timer_sec = 0
         self.timer = nil
+    }
+    
+    func button_moji_setup(){
+        button_auto_stop.setTitle("\(moji_set[0])", for: UIControl.State())
+        button_next.setTitle("\(moji_set[2])", for: UIControl.State())
+        button_back.setTitle("\(moji_set[3])", for: UIControl.State())
+        button_goto_big_main.setTitle("\(moji_set[4])", for: UIControl.State())
+        button_goto_big_next.setTitle("\(moji_set[4])", for: UIControl.State())
+        button_goto_big_back.setTitle("\(moji_set[4])", for: UIControl.State())
     }
     
 }

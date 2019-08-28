@@ -11,9 +11,11 @@ import UIKit
 class big_image_ViewController: UIViewController {
 
     var image_big_name = "error"
+    @IBOutlet weak var button_return: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        button_return.setTitle("", for: UIControl.State())
         image_big.image = UIImage(named: "\(image_big_name)")
         // Do any additional setup after loading the view.
     }
