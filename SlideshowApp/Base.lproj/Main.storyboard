@@ -55,16 +55,16 @@
                                     <action selector="button_next:" destination="BYZ-38-t0r" eventType="touchDown" id="Xxr-dz-HlU"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-6Z-2zx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-6Z-2zx">
                                 <rect key="frame" x="45" y="80" width="284" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-9W-N4w">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-9W-N4w">
                                 <rect key="frame" x="27" y="375" width="108" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="dk7-DP-beP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dk7-DP-beP">
                                 <rect key="frame" x="240" y="375" width="108" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -95,6 +95,13 @@
                                     <segue destination="I0N-yX-T5u" kind="show" id="13n-V4-GHy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0c-Ai-DAX">
+                                <rect key="frame" x="133" y="36" width="109" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -106,6 +113,7 @@
                         <outlet property="button_goto_big_main" destination="s8S-CT-wOo" id="X4O-1r-gZV"/>
                         <outlet property="button_goto_big_next" destination="YtM-Fy-7Em" id="Kel-98-1gm"/>
                         <outlet property="button_next" destination="iZr-jk-NSX" id="bmw-9d-vt5"/>
+                        <outlet property="current_number" destination="g0c-Ai-DAX" id="2ja-AH-9YC"/>
                         <outlet property="image_back" destination="Czh-9W-N4w" id="wgS-KA-zNB"/>
                         <outlet property="image_main" destination="g9Y-6Z-2zx" id="eDX-w4-GEY"/>
                         <outlet property="image_next" destination="dk7-DP-beP" id="o84-yZ-6CB"/>
@@ -135,7 +143,7 @@
                                     <segue destination="ofZ-ge-V7G" kind="unwind" unwindAction="unwind:" id="Tf0-Vj-van"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="dVz-6G-a35">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dVz-6G-a35">
                                 <rect key="frame" x="16" y="48" width="343" height="496"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -164,7 +172,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image_1" width="500" height="375"/>
+        <image name="image_1.jpg" width="500" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NCH-hE-WKH"/>

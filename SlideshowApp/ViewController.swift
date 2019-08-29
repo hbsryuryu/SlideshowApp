@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var print: UILabel!
+    @IBOutlet weak var current_number: UILabel!
     @IBOutlet weak var button_auto_stop: UIButton!
     @IBOutlet weak var button_next: UIButton!
     @IBOutlet weak var button_back: UIButton!
@@ -115,6 +116,7 @@ class ViewController: UIViewController {
         image_main.image = UIImage(named: "\(image_set[image_main_number])")
         image_next.image = UIImage(named: "\(image_set[image_next_number])")
         image_back.image = UIImage(named: "\(image_set[image_back_number])")
+        current_number.text = "\(image_main_number + 1)" + "/" + "\(image_max_count + 1)"
     }
     
     func image_next_func(){
