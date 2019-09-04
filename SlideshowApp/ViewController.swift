@@ -60,21 +60,21 @@ class ViewController: UIViewController {
     @IBAction func button_goto_big_main(_ sender: Any) {
         image_send_name = image_set[image_main_number]
         if (self.timer != nil){
-             auto_cancle()
+             auto_cancel()
         }
     }
     
     @IBAction func button_goto_big_next(_ sender: Any) {
         image_send_name = image_set[image_next_number]
         if (self.timer != nil){
-            auto_cancle()
+            auto_cancel()
         }
     }
     
     @IBAction func button_goto_big_back(_ sender: Any) {
         image_send_name = image_set[image_back_number]
         if (self.timer != nil){
-            auto_cancle()
+            auto_cancel()
         }
     }
     
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             button_auto_stop.setTitle("\(moji_set[1])", for: UIControl.State())
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(auto_side(_:)), userInfo: nil, repeats: true)
         }else{
-            auto_cancle()
+            auto_cancel()
         }
     }
     @IBAction func button_next(_ sender: Any) {
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
     
     func image_array_setup(){
         for i in 1...image_set_count{
-            image_set.append("image_" + String(i))
+            image_set.append("image_" + String(i) + ".jpg")
         }
         image_set.removeFirst()
         return image_set = image_set.shuffled()
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
         
     }
     
-    func auto_cancle(){
+    func auto_cancel(){
         button_swich(flug :"on")
         button_auto_stop.setTitle("\(moji_set[0])", for: UIControl.State())
         self.timer.invalidate()
